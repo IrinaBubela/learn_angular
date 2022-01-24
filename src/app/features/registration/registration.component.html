@@ -1,1 +1,50 @@
-<p>registration works!</p>
+<div class="container pt-4">
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <input type="Name" name="name"
+        placeholder="Name" 
+        formControlName="name"
+        emailValidator
+        class="form-control">
+        <div class="text-danger" 
+        *ngIf="name.invalid &&
+          name.dirty || name.invalid &&
+          name.touched ">
+          Name field should contain 3 or more characters
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <input type="email" name="email"
+        placeholder="Email" 
+        formControlName="email"
+        class="form-control">
+        <div class="text-danger" 
+        *ngIf="email.invalid &&
+          email.dirty || email.invalid &&
+          email.touched ">
+          Email field should contain 6 or more characters
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <input type="password"
+        placeholder="Password" 
+        formControlName="password"
+        class="form-control">
+        <div class="text-danger" 
+        *ngIf="password.invalid &&
+          password.dirty || password.invalid &&
+          password.touched ">
+          Password field is required
+        </div>
+    </div>
+  
+    <button 
+      [disabled]="!form.valid"
+      class="btn btn-primary">
+      Login
+    </button>
+  
+  </form>
+</div>

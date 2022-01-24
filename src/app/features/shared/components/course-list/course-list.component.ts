@@ -19,8 +19,8 @@ export class CourseListComponent implements OnInit {
   constructor() { 
     this.allCards = [
       { title: 'Angular', description: 'Description text about Angular', authors: ['Bib', 'Mike', 'Daniel'], duration: '120', creationDate:  Date.now(), isCourseEditable:this.isCourseEditable },
-      { title: 'React', description: 'Description text about React', authors: ['Ira', 'Iris', 'Inna'], duration: '93', creationDate:  Date.now(), isCourseEditable:this.isCourseEditable },
-      { title: 'Vue.js', description: 'Description text about Vue.js', authors: ['Nick', 'Harry', 'Geralt'], duration: '278', creationDate:  Date.now(), isCourseEditable:this.isCourseEditable }
+      // { title: 'React', description: 'Description text about React', authors: ['Ira', 'Iris', 'Inna'], duration: '93', creationDate:  Date.now(), isCourseEditable:this.isCourseEditable },
+      // { title: 'Vue.js', description: 'Description text about Vue.js', authors: ['Nick', 'Harry', 'Geralt'], duration: '278', creationDate:  Date.now(), isCourseEditable:this.isCourseEditable }
     ];
   }
 
