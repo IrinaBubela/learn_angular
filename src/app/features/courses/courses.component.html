@@ -1,4 +1,8 @@
 <div class="container pt-4">
+    <app-searchbar 
+        (userClicksEvent)="userClicks()"
+        [placeholderValue]="'React'">
+    </app-searchbar>
     <h4 class="h4">Courses:</h4>
-    <app-course-list [isCourseEditable]="isCourseEditableProp"></app-course-list>
+    <app-course-list [isCourseEditable]="true"></app-course-list>
 </div>

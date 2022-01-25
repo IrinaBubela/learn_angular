@@ -1,11 +1,10 @@
 <div class="container pt-4">
-
+  
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group col-6">
-        <h4 *ngIf="isAddMode">Add Course</h4>
-        <h4 *ngIf="!isAddMode">Edit Course</h4>
-        <div class="mb-3" *ngIf="isAddMode" >
+        <h4 >Add Course</h4>
+        <div class="mb-3" >
           <label for="title" class="form-label">Title</label>
           <input 
             class="form-control"
@@ -17,7 +16,7 @@
             Title field is required
           </div>
         </div>
-        <div class="mb-3" *ngIf="isAddMode" >
+        <div class="mb-3">
           <label for="title" class="form-label">Description</label>
           <input 
             class="form-control"
@@ -31,7 +30,7 @@
         </div>
       </div>
       <div class="form-group col-6 text-center">
-        <div class="mb-3" *ngIf="isAddMode" >
+        <div class="mb-3" >
           <button 
             type="submit"
             class="btn btn-primary"
@@ -41,9 +40,8 @@
     </div>
     <div class="form-row">
       <div class="form-group col-6">
-        <h4 *ngIf="isAddMode">Add Authors</h4>
-        <h4 *ngIf="!isAddMode">Edit Authors</h4>
-        <div class="mb-3" *ngIf="isAddMode" >
+        <h4>Add Authors</h4>
+        <div class="mb-3" >
           <label for="title" class="form-label">Author name</label>
           <input 
             class="form-control"
@@ -55,7 +53,7 @@
             Author Name can contain only latin letters and numbers
           </div>
         </div>
-        <div class="mb-3" *ngIf="isAddMode" >
+        <div class="mb-3">
           <button
             [disabled]="authorName.invalid &&
             authorName.dirty || authorName.invalid &&
@@ -63,7 +61,7 @@
             (click)="addNewAuthor()"
             class="btn btn-primary" >Create new author</button>
         </div>
-        <div class="mb-3" *ngIf="isAddMode" >
+        <div class="mb-3">
           <label for="title" class="form-label">Duration</label>
           <input 
             class="form-control"
@@ -95,9 +93,4 @@
       </div>
     </div>
   </form>
-</div>
-
-<div class="container pt-4">
-  <h4 class="h4">Courses:</h4>
-  <app-course-list [isCourseEditable]="true"></app-course-list>
 </div>

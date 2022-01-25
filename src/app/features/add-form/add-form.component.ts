@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { alphaNumericValidator } from './customValidation'
 
 @Component({
-  selector: 'app-edit-add-form',
-  templateUrl: './edit-add-form.component.html',
-  styleUrls: ['./edit-add-form.component.css']
+  selector: 'app-add-form',
+  templateUrl: './add-form.component.html',
+  styleUrls: ['./add-form.component.css']
 })
-export class EditAddFormComponent implements OnInit {
+export class AddFormComponent implements OnInit {
   form: FormGroup;
 
   isAddMode: boolean = true;

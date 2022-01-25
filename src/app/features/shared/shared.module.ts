@@ -10,6 +10,9 @@ import { SearchComponent } from './components/search/search.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { EmailValidatorDirective } from '../login/emailValidator.directive';
+import { SearchbarComponent } from '../searchbar/searchbar.component';
+import { durationPipe } from './components/course-card/duration.pipe';
+import { stringJoinerPipe } from './components/course-card/string-joiner.pipe copy';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { EmailValidatorDirective } from '../login/emailValidator.directive';
     SearchComponent,
     CourseCardComponent,
     CourseListComponent,
-    EmailValidatorDirective ],
+    SearchbarComponent,
+    EmailValidatorDirective,
+    durationPipe,
+    stringJoinerPipe ],
   imports: [
     CommonModule,
     FormsModule,

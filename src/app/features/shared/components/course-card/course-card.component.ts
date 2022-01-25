@@ -19,9 +19,7 @@ export class CourseCardComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit(): void {
-    this.duration = this.display(this.duration)
-  }
+  ngOnInit(): void {}
   
   deleteCard():void{
     this.delete.emit(this)
@@ -30,15 +28,4 @@ export class CourseCardComponent implements OnInit {
   editCard():void{
     this.addInputforEdit = !this.addInputforEdit;
   }
-
-  display(mins:any): string{
-    mins *= 60;
-    var minutes = Math.floor(mins % 3600 / 60);
-    var hours = Math.floor(mins / 3600);
-    return (this.addZero(hours) + ':' + this.addZero(minutes));
-  }
- 
-  addZero(n:number) { return (n < 10 ? '0' : '') + n; }
-
-
 }

@@ -17,4 +17,7 @@ export class CoursesComponent implements OnInit {
     this.isCourseEditableProp = this.isCourseEditable;
   }
 
+  userClicks(){
+    console.log('User clicked');
+  }
 }
