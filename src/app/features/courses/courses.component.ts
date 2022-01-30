@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthorsStoreService } from 'src/app/services/authors-store.service';
 
 @Component({
   selector: 'app-courses',
@@ -11,13 +12,19 @@ export class CoursesComponent implements OnInit {
 
   isCourseEditableProp:boolean;
 
-  constructor() { }
+  constructor(private service: AuthorsStoreService) { }
 
   ngOnInit(): void {
+    this.showAuthors();
     this.isCourseEditableProp = this.isCourseEditable;
   }
 
   userClicks(){
     console.log('User clicked');
   }
+
+  showAuthors(){
+    console.log(this.service.getCourse());
+  }
+
 }

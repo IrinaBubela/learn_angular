@@ -15,9 +15,7 @@ export function createPasswordStrengthValidator(): ValidatorFn{
         const hasNumeric = /[0-9]+/.test(value);
 
         const passwordValid = hasUpperCase && hasLowerCase && hasNumeric;
-        console.log(passwordValid);
-        
-
+  
         return !passwordValid ? {passwordStrength:true} : null;
     }
 }
