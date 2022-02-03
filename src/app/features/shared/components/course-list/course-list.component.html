@@ -1,0 +1,11 @@
+<div *ngFor="let card of allCards">
+    <app-course-card 
+        [title]="card.title" 
+        [description]="card.description" 
+        [duration]="card.duration"
+        [creationDate] = "card.creationDate"
+        [authors]= "card.authors"
+        [isCourseEditable] ="isCourseEditableProp"
+        (delete)="onDeleteCard($event)">
+    </app-course-card>
+</div>

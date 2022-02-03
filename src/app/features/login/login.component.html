@@ -1,0 +1,34 @@
+<div class="container my-4">
+  <form #loginForm="ngForm">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input 
+        #email="ngModel" 
+        ngModel 
+        emailValidator required 
+        type="email" name="email" 
+        class="form-control" >
+        <div class="text-danger" *ngIf="email?.errors && email.touched">
+          Email field should contain 3 or more characters
+        </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Password</label>
+      <input 
+        #password="ngModel" 
+        ngModel 
+        required 
+        type="password" name="password" 
+        class="form-control" >
+        <div class="text-danger" *ngIf="password?.errors && password.touched">
+          Password field is required
+        </div>
+    </div>
+  <button type="submit"
+    [disabled]="!loginForm.valid"
+    class="btn btn-primary">
+    Login
+  </button>
+  
+  </form>
+</div>

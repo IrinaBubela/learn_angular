@@ -1,0 +1,96 @@
+<div class="container pt-4">
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-6">
+        <h4 >Add Course</h4>
+        <div class="mb-3" >
+          <label for="title" class="form-label">Title</label>
+          <input 
+            class="form-control"
+            formControlName="title">
+          <div class="text-danger" 
+            *ngIf="title.invalid &&
+            title.dirty || title.invalid &&
+            title.touched ">
+            Title field is required
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Description</label>
+          <input 
+            class="form-control"
+            formControlName="description">
+            <div class="text-danger" 
+              *ngIf="description.invalid &&
+              description.dirty || description.invalid &&
+              description.touched ">
+              Description field is required
+            </div>
+        </div>
+      </div>
+      <div class="form-group col-6 text-center">
+        <div class="mb-3" >
+          <button 
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="form.invalid" >Create a course</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <h4>Add Authors</h4>
+        <div class="mb-3" >
+          <label for="title" class="form-label">Author name</label>
+          <input 
+            class="form-control"
+            formControlName="authorName">
+          <div class="text-danger" 
+            *ngIf="authorName.invalid &&
+            authorName.dirty || authorName.invalid &&
+            authorName.touched ">
+            Author Name can contain only latin letters and numbers
+          </div>
+        </div>
+        <div class="mb-3">
+          <button
+            [disabled]="authorName.invalid &&
+            authorName.dirty || authorName.invalid &&
+            authorName.touched"
+            (click)="addNewAuthor()"
+            class="btn btn-primary" >Create new author</button>
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Duration</label>
+          <input 
+            class="form-control"
+            formControlName="duration">
+            <div class="text-danger" 
+              *ngIf="duration.invalid &&
+              duration.dirty || duration.invalid &&
+              duration.touched ">
+              Duration field is required and couldn't be less than 0
+            </div>
+        </div>
+      </div>
+      <div class="form-group col-6">
+        <h4>Authors List:</h4>
+        <ng-container 
+          class="mb-3" 
+          formArrayName="authors"
+          *ngFor="let authorForm of authors.controls; let i = index;">
+          <div class="d-flex">
+            <button
+              class="btn btn-sm btn-outline-primary  mr-4"
+              *ngIf="authorForm.value.authorName">Delete
+            </button>
+            <div [formGroupName]="i">
+              {{authorForm.value.authorName}}
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="container pt-4">
+  <form>
+    <h3 *ngIf="!edit" >{{title}}</h3>
+    <div class="mb-3" *ngIf="edit" >
+      <input [(ngModel)]="title" 
+        class="form-control"
+        formControlName="title">
+      <!-- <div class="text-danger" 
+      *ngIf="title.invalid &&
+        title.dirty || title.invalid &&
+        title.touched ">
+        Title field should contain 3 or more characters
+      </div> -->
+    </div>
+
+    <p *ngIf="!edit">{{text}}</p>
+    <div class="mb-3" *ngIf="edit" >
+      <input [(ngModel)]="text" 
+        class="form-control"
+        formControlName="text">
+    </div>
+    <!-- <div class="text-danger" 
+      *ngIf="text.invalid &&
+        text.dirty || text.invalid &&
+        text.touched ">
+        Text field should contain 3 or more characters
+      </div> -->
+  </form>
+</div>

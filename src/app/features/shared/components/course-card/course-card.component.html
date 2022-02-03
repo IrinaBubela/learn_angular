@@ -1,0 +1,23 @@
+<article>
+    <section>
+        <app-info [edit]="addInputforEdit" [title]="title" [text]="description"></app-info>
+    </section>
+    <aside>
+        <p><strong>Authors: </strong>
+            <span *ngFor="let author of authors">
+                {{author}}
+            </span>
+        </p>
+        <p><strong>Duration: </strong>
+            {{duration | durationPipe }} hours
+        </p>
+        <p><strong>Created: </strong>
+            {{creationDate | date: 'dd.MM.YYYY'}}
+        </p> 
+        <app-header>
+            <app-button [textBtn]="'Show course'"></app-button>
+            <app-button (click)="editCard()" *ngIf="isCourseEditable" [iconEdit]="addInputforEdit? 'fas fa-save': 'fas fa-edit'"></app-button>
+            <app-button (click)="deleteCard()" *ngIf="isCourseEditable"  [iconEdit]="'fas fa-trash'"></app-button>
+        </app-header>
+    </aside>
+</article>
