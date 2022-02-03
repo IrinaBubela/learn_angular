@@ -9,6 +9,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AddFormComponent } from './features/add-form/add-form.component';
 import { EditFormComponent } from './features/edit-form/edit-form.component';
+import { StoreModule } from '@ngrx/store';
+import { effects, reducers } from './store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { EditFormComponent } from './features/edit-form/edit-form.component';
     CoursesModule,
     FontAwesomeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers ),
+    EffectsModule.forRoot(effects)
   ],
   providers: [Window],
   bootstrap: [AppComponent]
